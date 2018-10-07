@@ -48,7 +48,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="clickedLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r75-gj-40Q"/>
-                                    <segue destination="keL-ya-srh" kind="show" identifier="gohome" id="eQa-Rr-iaw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParseChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NW-w1-4VR">
@@ -85,6 +84,7 @@
                     <connections>
                         <outlet property="passwordLabel" destination="nag-tF-gOo" id="qBg-HF-9yH"/>
                         <outlet property="usernameLabel" destination="px3-ft-N8h" id="4Xa-VX-wVp"/>
+                        <segue destination="keL-ya-srh" kind="show" identifier="gohome" id="7Bc-yn-s7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

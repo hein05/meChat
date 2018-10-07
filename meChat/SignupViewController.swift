@@ -48,7 +48,7 @@ class SignupViewController: UIViewController {
     
     @IBAction func clicksignUp(_ sender: Any) {
         if (usernameField!.text == "") || (passwordField!.text == "") || (emailField!.text == "") {
-            self.emptyFieldAlert()
+            self.fieldAlert(title: "Empty Field", message: "All Field must be filled in")
         } else {
             self.registerUser()
             self.dismiss(animated: true, completion: nil)

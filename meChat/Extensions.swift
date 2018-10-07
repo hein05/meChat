@@ -11,9 +11,9 @@ import Parse
 
 extension UIViewController {
     
-    func emptyFieldAlert () {
+    func fieldAlert (title: String, message: String) {
 
-        let showAlert = UIAlertController(title: "Empty Field", message: "All fields must be filled in", preferredStyle: .alert)
+        let showAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
         showAlert.addAction(dismissAction)
@@ -30,11 +30,9 @@ extension UIViewController {
         // fetch data asynchronously
         query.findObjectsInBackground { (posts, error) in
             if let posts = posts {
-                print(">>>>>>>>>> More Posts")
                 print(posts)
                 success(posts)
             } else if (posts?.isEmpty)! {
-                print(">>>>>>>>>> No More Posts")
             }
             else if error != nil {
                 print("ERROR INSIDE FETCHED POST \(error?.localizedDescription)")

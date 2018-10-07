@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     func loginUser() {
@@ -26,18 +25,19 @@ class LoginViewController: UIViewController {
         let password = passwordLabel.text ?? ""
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
+            
             if let error = error {
-                print("User log in failed: \(error.localizedDescription)")
+//                print("User log in failed: \(error.localizedDescription)")
+                self.fieldAlert(title: "Error", message: "User log in failed: \(error.localizedDescription)")
             } else {
                 print("User logged in successfully")
-                // display view controller that needs to shown after successful login
+                self.performSegue(withIdentifier: "gohome", sender: nil)
             }
         }
     }
     
     @IBAction func clickedLogin(_ sender: Any) {
         self.loginUser()
-        performSegue(withIdentifier: "gohome", sender: nil)
     }
 }
 

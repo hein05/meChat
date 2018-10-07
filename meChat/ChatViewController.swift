@@ -47,7 +47,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let error = error {
                 print("There is error in Logging Out\(error.localizedDescription)")
             } else {
-                print("Logout successfully")
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -56,7 +55,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func clickedSend(_ sender: Any) {
         chatMessage.saveInBackground { (success, error) in
             if success {
-                print("The message was saved!")
             } else if let error = error {
                 print("Problem saving message: \(error.localizedDescription)")
             }
@@ -64,7 +62,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func onTimer () {
-        print("=================== ON Timer =======================")
         self.fetchPosts { (fetchedposts) in
             for post in fetchedposts {
                 self.messageArray.append(post)
@@ -74,7 +71,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(messageArray.count)
         return messageArray.count
     }
     
